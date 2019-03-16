@@ -1,1 +1,1 @@
-# mynote
+# mynote![title](undefined)
