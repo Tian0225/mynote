@@ -3,12 +3,12 @@ JiTian
 22岁
 大四 求职Java实习
 Javase学完了
----
+
 求职中看到需求差不多都要SSM/SSH框架
 自学：how2j.com 
       慕课网
       淘宝百度网盘
----
+
  SSM学习前所需知识框架： 
 1 .JAVA 基础 ---- HelloWorld
 2 .JAVA 基础 ---- 面向对象
@@ -48,8 +48,7 @@ Javase学完了
 36 .工具和中间件 --- Intellij IDEA
 37 .工具和中间件 --- 部署到Linux
 38 .实践项目 --- 天猫整站SSM
----
-演示ppt
----
+
+
 
 ~下角标~
