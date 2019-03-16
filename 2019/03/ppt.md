@@ -1,3 +1,7 @@
 JiTian
 22岁
-大四
+大四 求职Java实习
+Javase学完了
+---
+求职中看到需求差不多都要SSM/SSH框架
+自学：how2
