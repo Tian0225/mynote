@@ -4,4 +4,7 @@ JiTian
 Javase学完了
 ---
 求职中看到需求差不多都要SSM/SSH框架
-自学：how2
+自学：how2j.com 
+      慕课网
+      淘宝百度网盘
+---
