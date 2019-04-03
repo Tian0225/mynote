@@ -14,6 +14,7 @@
 &nbsp; &nbsp; }
 &nbsp; &nbsp; &nbsp; &nbsp;
 &nbsp; &nbsp; &nbsp; &nbsp;public static int lengthOfLongestSubstring(String s) {
+
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(s.length() == 1) return 1;
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(s.length() == 0) return 0;
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;char str[] = s.toCharArray();&nbsp;
@@ -42,6 +43,7 @@
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;t = true; i++; j = i + 1; length = 1;
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}
+
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return max;
 &nbsp; &nbsp; &nbsp; &nbsp;}
 }
