@@ -1,1 +1,49 @@
-<attachment contenteditable="false" data-atts="%5B%5D" data-aid=".atts-0ffcadb1-c9d2-47be-bcbc-521661527f8a"></attachment><p>给定一个字符串，找出不含有重复字符的最长子串的长度。leetcode</p><p><br></p><p>https://www.cnblogs.com/K-artorias/p/7665604.html</p><p><br></p><p>https://blog.csdn.net/xc121566/article/details/80827129</p><p><br></p>
+<attachment contenteditable="false" data-atts="%5B%5D" data-aid=".atts-0ffcadb1-c9d2-47be-bcbc-521661527f8a"></attachment><p>给定一个字符串，找出不含有重复字符的最长子串的长度。leetcode</p><p><br></p><p>https://www.cnblogs.com/K-artorias/p/7665604.html</p><p><br></p><p>https://blog.csdn.net/xc121566/article/details/80827129</p><pre class="ql-syntax" spellcheck="false">public class LeetCode3 {
+&nbsp; &nbsp; &nbsp; &nbsp;public static void main(String[] args) {
+&nbsp; &nbsp; &nbsp; &nbsp; /**
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* LeetCode第3题：
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* 给定一个字符串，找出不含有重复字符的最长子串的长度。
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* 示例：给定 "abcabcbb" ，没有重复字符的最长子串是 "abc" ，那么长度就是3。
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* 解题思路：建立指针i,j,i=0,j=i+1;最大字符长度为max
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* if str[i-(j-1)]的区间中存在 = str[j] ， i++;j=i+1;break;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* else j++;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* 运行时间 n的2次方
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;String s = "pwwkew";
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println(lengthOfLongestSubstring(s));
+&nbsp; &nbsp; }
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;public static int lengthOfLongestSubstring(String s) {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(s.length() == 1) return 1;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(s.length() == 0) return 0;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;char str[] = s.toCharArray();&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;int i = 0,j = i+1,max = 0;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;boolean&nbsp; t = true;
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;while(i &lt; s.length() - 1){
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;int length = 1;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//检测是否重复
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(j == s.length()) break;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for(int k = i; k &lt; j;k++){
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(str[j] != str[k] ){
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;length++;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}else{
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;t = false;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(length &gt; max){
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;max = length;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//如果检测成功，j指针右移一次
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(t) j++;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//检测失败，i指针右移一次，j指针回到i+1的位置
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else{
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;t = true; i++; j = i + 1; length = 1;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return max;
+&nbsp; &nbsp; &nbsp; &nbsp;}
+}
+
+</pre><p><br></p>
